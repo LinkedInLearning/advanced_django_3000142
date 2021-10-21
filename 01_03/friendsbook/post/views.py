@@ -30,8 +30,3 @@ def add_post(request):
         else:
             print(form.errors)
         return HttpResponse(status=200)
-    else:
-        # Get request
-        template = loader.get_template('create.html')
-        draft = request.session.get('draft_post', '')
-        return HttpResponse(template.render({'form': PostForm({'content': draft})}, request))
