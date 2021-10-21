@@ -1,0 +1,60 @@
+body {
+    width: 100%;
+    background-color: rgb(195, 195, 255);
+}
+
+label {
+    display: block;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.header {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+}
+
+.links {
+    float: right;
+}
+
+
+.wrapper {
+    border: 5px solid rgb(135, 135, 255);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    height: 100%;
+}
+
+.post {
+    border: 1px solid gray;
+    width: 500px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.date {
+    color: gray;
+    font-size: 12px;
+}
+
+.business {
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.profile {
+    margin-bottom: 40px;
+}
+
+.profile-about {
+    margin-left: 40px;
+    width: 60%;
+}
