@@ -21,8 +21,27 @@ def int_to_hex(value):
 class RGBcolorField(models.CharField):
     description = 'A field for holding RGB color values'
     def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 6
+        self._validators = []
+        self.validators.append(self.validate_all_values_hex)
         super().__init__(*args, **kwargs)
 
+    def validate_all_values_hex(self, value):
+        try:
+            hex_to_int(value)
+        except: 
+            raise ValidationError('{} is not a hex value'.format(value))
+
+    def db_type(self, connection):
+        return 'UNSIGNED INTEGER(3)'
+
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return None 
+        return int_to_hex(value)
+    
+    def get_prep_value(self, value):
+        return hex_to_int(value)
 
 
 class UserAccount(models.Model):
@@ -32,6 +51,7 @@ class UserAccount(models.Model):
     created_on = models.DateTimeField('date created', auto_now_add=True)
     birthday = models.DateField()
     location = models.CharField(max_length=200)
+    favorite_color = RGBcolorField(null=True)
     about = models.TextField(null=True)
 
     def name(self):
