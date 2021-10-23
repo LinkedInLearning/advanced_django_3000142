@@ -5,11 +5,9 @@ from useraccount.models import UserAccount
 from business.models import Business
 
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 
 
 # Create your models here.
 class ProfilePage(models.Model):
     user_account = models.ForeignKey(UserAccount, null=True, blank=False, on_delete=CASCADE)
-
-    def __str__(self):
-        return '{}'.format(self.user_account.first_name)
