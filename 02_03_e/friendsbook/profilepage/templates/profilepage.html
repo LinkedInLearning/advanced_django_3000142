@@ -10,6 +10,7 @@
         <a href="/useraccount/{{profile.user_account.id}}/edit">EDIT YOUR INFO</a>
     {% endif %}
     <h2>{{profile.user_account.name}}</h2>
+    <img src="/{{profile.user_account.profile_photo}}" style="float:left;height:200px;">
     <p><span class="label">Joined:</span> {{profile.user_account.created_on}}</p>
     <p><span class="label">Birthday:</span> {{profile.user_account.birthday}}</p>
 
