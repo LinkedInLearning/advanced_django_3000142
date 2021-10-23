@@ -14,11 +14,7 @@ def profile_detail(request, profilepage_id):
     template = loader.get_template('profilepage.html')
     profile = ProfilePage.objects.get(id=profilepage_id)
     Post = apps.get_model('post', 'Post')
-    print('AUTHOR IS:')
-    print(profile.user_account.user)
     posts = Post.objects.filter(author=profile.user_account.user)
-    print('POSTS ARE:')
-    print(posts)
     own_profile = request.user and (request.user.id == profile.user_account.user.id)
     return HttpResponse(template.render({'profile': profile, 'posts': posts, 'own_profile': own_profile}, request))
 
