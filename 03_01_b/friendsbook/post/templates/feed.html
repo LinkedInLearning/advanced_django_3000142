@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+
+<div class="wrapper">
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{new_post_form}}
+    <input type="submit" value="Submit Form"/>
+</form>
+
+
+{% for post in posts %}
+<div class="post">
+    <span id="post-{{post.id}}">
+        <span class="date"><a href="/post/{{post.id}}">{{post.created_on}}</a></span> by <a href="/profile/{{ post.author.id }}">{{post.author.username}}</a>
+            </p>{{post.content}}
+    </span>
+</div>
+{% endfor %}
+
+</div>
