@@ -1,0 +1,10 @@
+{% include 'header.html' %}
+
+<div class="wrapper">
+    <div class="post">
+        <span id="post-{{post.id}}">
+            <span class="date">{{post.created_on}}</span> by <a href="/profile/{{ post.author.id }}">{{post.author.username}}</a>
+                </p>{{post.content}}
+        </span>
+    </div>
+</div>
