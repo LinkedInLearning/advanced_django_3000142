@@ -1,0 +1,14 @@
+{% include 'header.html' %}
+
+<div class="wrapper">
+
+    <div class="businesses">
+    LOCAL BUSINESSES:
+        {% for business in businesses %}
+            <div class="business">
+                {{business.name}}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
