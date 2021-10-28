@@ -7,7 +7,7 @@ from business.models import Business
 from django.contrib.contenttypes.models import ContentType
 
 
-# Create your models here.
+
 class ProfilePage(models.Model):
     user_account = models.ForeignKey(UserAccount, null=True, blank=False, on_delete=CASCADE)
 

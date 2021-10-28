@@ -8,6 +8,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 
 
-# Create your models here.
+
 class ProfilePage(models.Model):
     user_account = models.ForeignKey(UserAccount, null=True, blank=False, on_delete=CASCADE)

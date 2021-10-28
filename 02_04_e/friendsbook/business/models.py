@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 
 
-# Create your models here.
+
 class Business(models.Model):
     user = models.ForeignKey(User, null=False, blank=False, on_delete=CASCADE)
     name = models.CharField(max_length=140)

@@ -3,7 +3,7 @@ from django.template import loader
 from django.http import HttpResponse
 
 from .models import Business
-# Create your views here.
+
 
 def business_listing(request):
     template = loader.get_template('business_listing.html')

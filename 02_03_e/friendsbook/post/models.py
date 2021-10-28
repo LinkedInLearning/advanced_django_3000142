@@ -10,7 +10,7 @@ def validate_no_bad_words(content):
         raise ValidationError('This post contains bad words!')
 
 
-# Create your models here.
+
 class Post(models.Model):
     author = models.ForeignKey(User, null=True, blank=True, on_delete=CASCADE)
     content = models.CharField(max_length=140, validators=[validate_no_bad_words])

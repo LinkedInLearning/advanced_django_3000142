@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+<div class="wrapper">
+
+    <ul>
+        FRIENDSBOOK USERS:
+            {% for useraccount in useraccounts %}
+                <li class="useraccount">
+                    {{useraccount.first_name}} {{useraccount.last_name}}
+                </li>
+            {% endfor %}
+            </ul>
+
+</div>

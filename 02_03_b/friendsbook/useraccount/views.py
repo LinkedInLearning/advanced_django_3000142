@@ -7,7 +7,7 @@ from .models import UserAccount
 from django.apps import apps
 from .forms import UserAccountForm
 
-# Create your views here.
+
 
 def useraccount_edit(request, useraccount_id):
     useraccount = get_object_or_404(UserAccount, id=useraccount_id)
