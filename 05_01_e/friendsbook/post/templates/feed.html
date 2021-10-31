@@ -13,7 +13,9 @@
 <div class="post">
     <span id="post-{{post.id}}">
         <span class="date"><a href="/post/{{post.id}}">{{post.created_on}}</a></span> by <a href="/profile/{{ post.author.id }}">{{post.author.username}}</a>
-            </p>{{post.content}}
+            
+        </p>{{post.content}}
+
     </span>
 </div>
 {% endfor %}

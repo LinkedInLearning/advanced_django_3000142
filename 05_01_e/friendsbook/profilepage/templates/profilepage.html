@@ -22,6 +22,10 @@
 {% if posts|length > 0 %}
 
 <span class="label">The latest from {{profile.subject.first_name}}:</span>
+{% include 'feed.html' %}
+
+{% comment %}
+
 {% for post in posts %}
 <div class="post">
     <span id="post-{{post.id}}">
@@ -30,5 +34,7 @@
     </span>
 </div>
 {% endfor %}
+
+{% endcomment %}
 {% endif %}
 </div>
