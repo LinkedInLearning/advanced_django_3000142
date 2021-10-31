@@ -1,7 +1,10 @@
 {% load bootstrap5 %}
+{% load humanize %}
+{% load l10n %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% include 'header.html' %}
+
 
 <div class="wrapper">
 
@@ -12,7 +15,9 @@
     <h2>{{profile.subject.name}}</h2>
     <img src="/{{profile.subject.profile_photo}}" style="float:left;height:200px;" class="profile-picture">
     <p><span class="label">Joined:</span> {{profile.subject.created_on}}</p>
-    <p><span class="label">Birthday:</span> {{profile.subject.birthday}}</p>
+    {% localize on%}
+    <p><span class="label">Birthday:</span> {{ seconds_since | intword}} seconds ago</p>
+    {% endlocalize %}
     <p><span class="label">Location:</span> {{profile.subject.location}}</p>
 
     <div class="profile-about">
@@ -22,9 +27,6 @@
 {% if posts|length > 0 %}
 
 <span class="label">The latest from {{profile.subject.first_name}}:</span>
-{% include 'feed.html' %}
-
-{% comment %}
 
 {% for post in posts %}
 <div class="post">
@@ -35,6 +37,5 @@
 </div>
 {% endfor %}
 
-{% endcomment %}
 {% endif %}
 </div>

@@ -4,6 +4,7 @@ from django.template import loader
 from .models import ProfilePage
 from django.apps import apps
 
+import datetime
 
 def profile_detail(request, profilepage_id):
     template = loader.get_template('profilepage.html')
@@ -14,6 +15,7 @@ def profile_detail(request, profilepage_id):
         Post = apps.get_model('post', 'Post')
         posts = Post.objects.filter(author=profile.subject.user)
         own_profile = request.user and (request.user.id == profile.subject.user.id)
-    return HttpResponse(template.render({'profile': profile, 'posts': posts, 'own_profile': own_profile}, request))
+    return HttpResponse(template.render({'profile': profile, 'posts': posts, 'own_profile': own_profile, 'seconds_since': get_seconds_since(profile.subject.birthday)}, request))
 
-
+def get_seconds_since(date):
+        return (datetime.date.today() - date).total_seconds()
