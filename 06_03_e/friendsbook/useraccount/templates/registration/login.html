@@ -1,0 +1,12 @@
+{% load bootstrap5 %}
+{% load humanize %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% include 'header.html' %}
+
+<h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
