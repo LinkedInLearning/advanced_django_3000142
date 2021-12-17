@@ -118,10 +118,10 @@ CACHES = {
     }
 }
 
-#CACHE_MIDDLEWARE_ALIAS = 'file'
-#CACHE_MIDDLEWARE_SECONDS  = 15 * 60
-# Used to prevent key collision if cache is shared across multiple projects
-#CACHE_MIDDLEWARE_KEY_PREFIX = ''
+CACHE_MIDDLEWARE_ALIAS = 'file'
+CACHE_MIDDLEWARE_SECONDS  = 15 * 60
+#Used to prevent key collision if cache is shared across multiple projects
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 
 # Password validation
